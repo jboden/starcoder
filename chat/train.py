@@ -110,7 +110,7 @@ def main():
     )
     with training_args.main_process_first(desc="Log a few random samples from the raw training set"):
         for index in random.sample(range(len(raw_datasets["train_ift"])), 3):
-            logger.info(f"Sample {index} of the raw training set:\n\n{raw_datasets["train_ift"][index]['messages']}")
+            logger.info(f"Sample {index} of the raw training set:\n\n{raw_datasets['train_ift'][index]['messages']}")
 
     #########################
     # Apply dialogue template
@@ -140,7 +140,7 @@ def main():
 
     with training_args.main_process_first(desc="Log a few random samples from the training set"):
         for index in random.sample(range(len(raw_datasets["train_ift"])), 3):
-            logger.info(f"Sample {index} of the raw training set:\n\n{raw_datasets["train_ift"][index]['text']}")
+            logger.info(f"Sample {index} of the raw training set:\n\n{raw_datasets['train_ift'][index]['text']}")
 
     # since this will be pickled to avoid _LazyModule error in Hasher force logger loading before tokenize_function
     tok_logger = transformers.utils.logging.get_logger("transformers.tokenization_utils_base")
